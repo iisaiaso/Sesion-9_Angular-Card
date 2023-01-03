@@ -1,10 +1,11 @@
 <div class="w-3/4 mx-auto mt-6 p-6">
   <div class="mb-5">
     <label>
-      <input type="checkbox" id="cbox1" value="first_checkbox" /> Is Active
+      <input type="checkbox" [(ngModel)]="check"/> Is Active
     </label>
+   aqui: {{check}}
   </div>
-  <div class="max-w-sm rounded shadow-lg bg-slate-400">
+  <div *ngIf="check else presionar" class="max-w-sm rounded shadow-lg bg-slate-400">
     <img
       class="ml-10"
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/800px-Angular_full_color_logo.svg.png"
@@ -20,4 +21,7 @@
       </p>
     </div>
   </div>
+  <ng-template #presionar>
+    <p>Activa el Checkbox para mostrar el contenido</p>
+  </ng-template>
 </div>
